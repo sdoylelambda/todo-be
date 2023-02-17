@@ -1,5 +1,6 @@
 Flask==2.2
-Flask-SQLAlchemy==3.0.2
+Flask-SQLAlchemy==3.0.3
 jinja2==3.0.3
 werkzeug==2.2.0
 itsdangerous==2.0.1
+WTForms~=3.0.1
