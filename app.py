@@ -1,5 +1,5 @@
 from flask import Flask, redirect, url_for, render_template, request
-from models import db
+# from models import db
 
 # Flask
 app = Flask(__name__)
@@ -10,9 +10,9 @@ app.config['DEBUG'] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///book.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['DEBUG'] = True
-db.init_app(app)
-
-db.create_all()
+# db.init_app(app)
+#
+# db.create_all()
 
 
 @app.route("/")
@@ -21,6 +21,22 @@ def index():
     Home page
     '''
     return "Hello World"
+
+
+@app.route("/login")
+def login():
+    '''
+    Home page - Sign up/Sign in
+    '''
+    return render_template('login.html')
+
+
+@app.route("/todo")
+def todo():
+    '''
+    Home page - View, add, edit, and delete todos
+    '''
+    return render_template('todo.html')
 
 
 if __name__ == "__main__":
