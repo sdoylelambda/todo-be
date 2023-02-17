@@ -1,5 +1,5 @@
 from flask import Flask, redirect, url_for, render_template, request
-# from models import db
+from models import db
 
 # Flask
 app = Flask(__name__)
@@ -10,9 +10,10 @@ app.config['DEBUG'] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///book.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['DEBUG'] = True
-# db.init_app(app)
-#
+
 # db.create_all()
+
+db.init_app(app)
 
 
 @app.route("/")
@@ -40,4 +41,5 @@ def todo():
 
 
 if __name__ == "__main__":
-    app.run(port=3000)
+    # db.create_all()
+    app.run(debug=True, port=3000)
