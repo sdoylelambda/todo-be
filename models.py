@@ -25,6 +25,9 @@ class ToDO(db.Model):
 
 with app.app_context():
     db.create_all()
+
+    seed_user = User(username="TestUser", password="Password123")
+
 #     db.session.add(User())
 #     db.session.add(User())
 #     db.session.add(ToDO())
