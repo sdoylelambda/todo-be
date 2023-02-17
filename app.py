@@ -31,5 +31,13 @@ def login():
     return render_template('login.html')
 
 
+@app.route("/todo")
+def todo():
+    '''
+    Home page - View, add, edit, and delete todos
+    '''
+    return render_template('todo.html')
+
+
 if __name__ == "__main__":
     app.run(port=3000)
